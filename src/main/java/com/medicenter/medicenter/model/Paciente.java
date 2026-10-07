@@ -1,6 +1,8 @@
 package com.medicenter.medicenter.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 @Entity
@@ -15,6 +17,7 @@ public class Paciente {
     private String cpf;
 
     @Column(name = "data_nascimento")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataNascimento;
 
     private String telefone;
