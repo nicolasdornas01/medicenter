@@ -3,39 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Paciente - Medicenter</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<h1>Cadastro de Paciente</h1>
+<header>
+    <h2>Medicenter</h2>
+</header>
 
-<form th:action="@{/pacientes/salvar}" th:object="${paciente}" method="post">
+<div class="container">
+    <h1>Cadastro de Paciente</h1>
 
-    <input type="hidden" th:field="*{id}">
+    <form th:action="@{/pacientes/salvar}" th:object="${paciente}" method="post">
 
-    <p>
-        <label>Nome</label><br>
-        <input type="text" th:field="*{nome}" required>
-    </p>
+        <input type="hidden" th:field="*{id}">
 
-    <p>
-        <label>CPF</label><br>
-        <input type="text" th:field="*{cpf}" required>
-    </p>
+        <p>
+            <label>Nome</label>
+            <input type="text" th:field="*{nome}" required>
+        </p>
 
-    <p>
-        <label>Data de nascimento</label><br>
-        <input type="date" th:field="*{dataNascimento}">
-    </p>
+        <p>
+            <label>CPF</label>
+            <input type="text" th:field="*{cpf}" required>
+        </p>
 
-    <p>
-        <label>Telefone</label><br>
-        <input type="text" th:field="*{telefone}">
-    </p>
+        <p>
+            <label>Data de nascimento</label>
+            <input type="date" th:field="*{dataNascimento}">
+        </p>
 
-    <button type="submit">Salvar</button>
-    <a th:href="@{/pacientes}">Voltar</a>
+        <p>
+            <label>Telefone</label>
+            <input type="text" th:field="*{telefone}">
+        </p>
 
-</form>
+        <button class="botao" type="submit">Salvar</button>
+        <a class="botao botao-voltar" th:href="@{/pacientes}">Voltar</a>
+
+    </form>
+</div>
 
 </body>
 </html>
